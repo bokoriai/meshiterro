@@ -16,12 +16,13 @@ class PostImagesController < ApplicationController
 
   def show
     @post_image = PostImage.find(params[:id])
+    @post_comment = PostComment.new
   end
   
-  def dstroy
-    post_image = post_image.find(params[:id])
+  def destroy
+    post_image = PostImage.find(params[:id])
     post_image.destroy
-    redirect_to '/post/images'
+    redirect_to '/post_images'
   end
   
   #投稿データのストロングパラメーター
